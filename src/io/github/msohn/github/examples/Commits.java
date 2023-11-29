@@ -25,6 +25,8 @@ public class Commits {
 		CommitService cs = Client.getCommitService();
 		RepositoryId repo = new RepositoryId("msohn", "HelloWorld");
 		List<RepositoryCommit> commits = cs.getCommits(repo);
+		System.out.println("hello "+System.getProperty("github.test.user"));
+
 		for (RepositoryCommit rc : commits) {
 			Commit c = rc.getCommit();
 			System.out.println("Commit: "+ rc.getSha());
